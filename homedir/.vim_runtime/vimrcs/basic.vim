@@ -6,9 +6,11 @@ syntax enable                               " syntax highlight
 " Colors and themes
 set t_Co=256                                " set 256 colors
 set termguicolors
-"colorscheme wombat256mod                   " set color scheme
-colorscheme onedark                         " set color scheme
-set background=dark
+try
+    colorscheme onedark
+catch
+    colorscheme wombat256mod
+endtry
 
 set number                                  " show line numbers
 set ruler
