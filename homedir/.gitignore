@@ -1,0 +1,14 @@
+# Security
+id_rsa
+*secret*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Custom
+tausch/*
+*__pycache__*
+*.swp
+*cache
