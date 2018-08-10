@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# Sanity check
+[ -f /etc/lsb-release ] || { error "This script if for Ubuntu"; exit 127; }
+
+# Repo download and unzip
+rm -rf /tmp/repo &>/dev/null
+mkdir -p /tmp/repo
+cd /tmp/repo
+curl -L https://github.com/devligue/dotfiles/archive/master.zip > repo.zip
+sudo apt install unzip
+unzip repo.zip
+rm repo.zip
+mv dotfiles* ~/.dotfiles
+cd ~/.dotfiles
+rm -rf /tmp/repo
+
 source ./lib_sh/echos.sh
 bot "Hi! I'm going to setup this machine. Here I go..."
 
