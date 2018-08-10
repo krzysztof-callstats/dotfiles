@@ -1,6 +1,6 @@
 # Auto setup development environment
 
-## Instalation
+## Installation
 ```
 bash <(curl -L https://raw.githubusercontent.com/devligue/dotfiles/master/install_ubuntu.sh)
 ```
