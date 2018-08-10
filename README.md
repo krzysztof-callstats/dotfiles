@@ -1,2 +1,5 @@
-# dotfiles
-Set up fedora development environment fast
+# Auto setup development environment
+
+```
+bash <(curl -L https://raw.githubusercontent.com/devligue/dotfiles/master/install_ubuntu.sh)
+```
