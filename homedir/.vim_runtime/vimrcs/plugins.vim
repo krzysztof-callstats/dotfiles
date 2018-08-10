@@ -5,8 +5,8 @@ set nocompatible
 "" Vundle settings
 "=====================================================
 filetype off
-"let $vundle=$vimhome."~/.config/nvim/bundle/Vundle.vim"
-"set rtp+=$vundle
+let $vundle=$vimhome."~/.vim_runtime/bundle/Vundle.vim"
+set rtp+=$vundle
 call vundle#begin()
 
     Plugin 'VundleVim/Vundle.vim'               " let Vundle manage Vundle, required
