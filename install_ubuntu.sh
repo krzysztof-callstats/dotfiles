@@ -18,7 +18,7 @@ rm -rf /tmp/repo
 source ./lib_sh/echos.sh
 bot "Hi! I'm going to setup this machine. Here I go..."
 
-bot "Configuring git"
+bot "Configuring git. I'm gonna need your help..."
 grep 'user = GITHUBUSER' ./homedir/.gitconfig > /dev/null 2>&1
 if [[ $? = 0 ]]; then
     read -r -p "What is your github.com username? " githubuser
@@ -32,23 +32,23 @@ if [[ $? = 0 ]]; then
     sed -i 's/GITHUBUSER/'$githubuser'/' ./homedir/.gitconfig
 fi
 
-bot "Configuring Repository"
+bot "Configuring system repository..."
 sudo apt-get install software-properties-common
 sudo apt-add-repository ppa:neovim-ppa/stable
 
-bot "Update packages"
+bot "Updating packages..."
 sudo apt-get update
 
-bot "Install python and other necessary tools"
+bot "Installing python and other necessary tools"
 sudo apt install python-pip
 sudo apt install python3-pip
 pip install --user neovim
-pip3 install --user pipenv neovim flake8
+pip3 install --user pipenv neovim flake8 black
 
-bot "Installing neovim"
+bot "Installing neovim..."
 sudo apt-get install neovim
 
-bot "creating symlinks for project dotfiles..."
+bot "Creating symlinks for project dotfiles..."
 pushd homedir > /dev/null 2>&1
 now=$(date +"%Y.%m.%d.%H.%M.%S")
 
