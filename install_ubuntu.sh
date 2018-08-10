@@ -77,5 +77,6 @@ popd > /dev/null 2>&1
 # grep 'source ~/.profile' ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
 
 bot "setting up neovim"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim_runtime/bundle/Vundle.vim
 nvim +PluginInstall +qall
 #sudo reboot
