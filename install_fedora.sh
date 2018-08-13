@@ -54,15 +54,18 @@ for file in .*; do
   fi
   # if the file exists:
   if [[ -e ~/$file ]]; then
+      inform "$file already exists"
       mkdir -p ~/.dotfiles_backup/$now
       mv ~/$file ~/.dotfiles_backup/$now/$file
-      echo "backup saved as ~/.dotfiles_backup/$now/$file"
+      inform "backup saved as ~/.dotfiles_backup/$now/$file"
   fi
   # symlink might still exist
+  running "unlink ~/$file > /dev/null 2>&1"
   unlink ~/$file > /dev/null 2>&1
   # create the link
+  running "ln -s ~/.dotfiles/homedir/$file ~/$file"
   ln -s ~/.dotfiles/homedir/$file ~/$file
-  echo -en linking ${file}; ok
+  ok "linking ${file}"
 done
 
 popd > /dev/null 2>&1
