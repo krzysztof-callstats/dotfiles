@@ -51,7 +51,7 @@ for file in .*; do
   fi
   # if the file exists:
   if [[ -e ~/$file ]]; then
-      inform "$file already exists"
+      warn "$file already exists"
       mkdir -p ~/.dotfiles_backup/$now
       running mv ~/$file ~/.dotfiles_backup/$now/$file
       inform "backup saved as ~/.dotfiles_backup/$now/$file"
