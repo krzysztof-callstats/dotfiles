@@ -22,6 +22,10 @@ function running() {
     echo -en "$COL_YELLOW ⇒ $COL_RESET"$1": "
 }
 
+function inform() {
+    echo -e "$COL_BLUE[info]$COL_RESET "$1
+}
+
 function action() {
     echo -e "\n$COL_YELLOW[action]:$COL_RESET\n ⇒ $1..."
 }
