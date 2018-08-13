@@ -33,6 +33,7 @@ if [[ $? = 0 ]]; then
 fi
 
 bot "Updating packages..."
+running "sudo dnf -y update"
 sudo dnf -y update
 
 bot "Installing python and other necessary tools"
@@ -42,7 +43,8 @@ pip install --user neovim
 pip3 install --user pipenv neovim flake8 black
 
 bot "Installing neovim..."
-dnf -y install neovim
+running "dnf -y install neovim"
+sudo dnf -y install neovim
 
 bot "Creating symlinks for project dotfiles..."
 pushd homedir > /dev/null 2>&1
@@ -65,15 +67,16 @@ for file in .*; do
   # create the link
   running "ln -s ~/.dotfiles/homedir/$file ~/$file"
   ln -s ~/.dotfiles/homedir/$file ~/$file
-  ok "linking ${file}"
+  ok "${file} linked"
 done
 
 popd > /dev/null 2>&1
 
-
 bot "Configuring bash..."
 # mkdir -p ~/bin
-grep 'source ~/.profile' ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
+running 'grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc'
+grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
+running "source ~/.bashrc"
 source ~/.bashrc
 
 bot "Setting up neovim..."
