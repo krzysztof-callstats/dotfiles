@@ -33,18 +33,13 @@ if [[ $? = 0 ]]; then
 fi
 
 bot "Updating packages..."
-running "sudo dnf -y update"
-sudo dnf -y update
+running sudo dnf -y update
 
 bot "Installing python and other necessary tools"
-sudo dnf install python-pip
-sudo dnf install python3-pip
-pip install --user neovim
-pip3 install --user pipenv neovim flake8 black
-
-bot "Installing neovim..."
-running "dnf -y install neovim"
-sudo dnf -y install neovim
+running sudo dnf install python-pip
+running sudo dnf install python3-pip
+running pip install --user neovim
+running pip3 install --user pipenv neovim flake8 black
 
 bot "Creating symlinks for project dotfiles..."
 pushd homedir > /dev/null 2>&1
@@ -58,15 +53,13 @@ for file in .*; do
   if [[ -e ~/$file ]]; then
       inform "$file already exists"
       mkdir -p ~/.dotfiles_backup/$now
-      mv ~/$file ~/.dotfiles_backup/$now/$file
+      running mv ~/$file ~/.dotfiles_backup/$now/$file
       inform "backup saved as ~/.dotfiles_backup/$now/$file"
   fi
   # symlink might still exist
-  running "unlink ~/$file > /dev/null 2>&1"
-  unlink ~/$file > /dev/null 2>&1
+  running unlink ~/$file > /dev/null 2>&1
   # create the link
-  running "ln -s ~/.dotfiles/homedir/$file ~/$file"
-  ln -s ~/.dotfiles/homedir/$file ~/$file
+  running ln -s ~/.dotfiles/homedir/$file ~/$file
   ok "${file} linked"
 done
 
@@ -74,12 +67,11 @@ popd > /dev/null 2>&1
 
 bot "Configuring bash..."
 # mkdir -p ~/bin
-running 'grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc'
-grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
-running "source ~/.bashrc"
-source ~/.bashrc
+running grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
+running source ~/.bashrc
 
 bot "Setting up neovim..."
-sudo dnf install ctags
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim_runtime/bundle/Vundle.vim
-nvim +PluginInstall +qall
+running sudo dnf -y install neovim
+running sudo dnf install ctags
+running git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim_runtime/bundle/Vundle.vim
+running nvim +PluginInstall +qall
