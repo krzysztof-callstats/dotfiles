@@ -8,13 +8,12 @@ rm -rf /tmp/repo &>/dev/null
 mkdir -p /tmp/repo
 cd /tmp/repo
 curl -L https://github.com/devligue/dotfiles/archive/master.zip > repo.zip
-sudo yum -y install unzip
+sudo dnf -y install unzip
 unzip repo.zip
 rm repo.zip
 mv dotfiles* ~/.dotfiles
 cd ~/.dotfiles
 rm -rf /tmp/repo
-bash setup_fedora.sh
 
 source ./lib_sh/echos.sh
 bot "Hi! I'm going to setup this machine. Here I go..."
@@ -72,6 +71,7 @@ popd > /dev/null 2>&1
 bot "Configuring bash..."
 # mkdir -p ~/bin
 grep 'source ~/.profile' ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
+source ~/.bashrc
 
 bot "Setting up neovim..."
 sudo dnf install ctags
