@@ -15,5 +15,5 @@ bash <(curl -L https://raw.githubusercontent.com/devligue/dotfiles/master/instal
 ```
 
 ## Acknowledgments
-The idea and most of the initial setup code was stolen from [jayanatl](https://github.com/jayanatl/dotfiles). Thanks!
+The idea and most of the initial setup code was stolen from [jayanatl](https://github.com/jayanatl/dotfiles/tree/nvim). Thanks!
 
