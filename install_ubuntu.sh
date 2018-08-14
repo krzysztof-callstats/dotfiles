@@ -74,10 +74,11 @@ popd > /dev/null 2>&1
 bot "Configuring bash..."
 # mkdir -p ~/bin
 running grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
-running source ~/.bashrc
 
 bot "Setting up neovim..."
 running sudo apt-get install neovim
 running sudo apt install exuberant-ctags
 running git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim_runtime/bundle/Vundle.vim
 running nvim +PluginInstall +qall
+
+bot "Everything done! Please reboot, so that everything works correctly"
