@@ -6,6 +6,8 @@ id_rsa
 __pycache__/
 *.py[cod]
 *$py.class
+pyu-data
+.pyupdater
 
 # Custom
 tausch/*
