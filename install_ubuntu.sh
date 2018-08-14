@@ -11,7 +11,9 @@ curl -L https://github.com/devligue/dotfiles/archive/master.zip > repo.zip
 sudo apt install unzip
 unzip repo.zip
 rm repo.zip
-mv dotfiles* ~/.dotfiles
+cd dotfiles*
+mkdir -p ~/.dotfiles
+cp -a . ~/.dotfiles
 cd ~/.dotfiles
 rm -rf /tmp/repo
 
