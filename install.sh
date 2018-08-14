@@ -21,3 +21,5 @@ else
   error "This setup script does not support your platform."
   exit 127;
 fi
+
+bot "Everything done! Please reboot, so that everything works correctly"
