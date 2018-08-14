@@ -7,6 +7,7 @@ set nocompatible
 filetype off
 let $vundle=$vimhome."~/.vim_runtime/bundle/Vundle.vim"
 set rtp+=$vundle
+set rtp+=~/.fzf
 call vundle#begin()
 
     Plugin 'VundleVim/Vundle.vim'               " let Vundle manage Vundle, required
