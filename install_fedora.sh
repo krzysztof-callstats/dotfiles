@@ -17,7 +17,7 @@ bot "Configuring bash..."
 running git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 running ~/.fzf/install
 # Install ag
-running sudo dnf install the_silver_searcher
+running sudo dnf install the_silver_searcher -y
 # Add "source ~/.profile" to .bashrc if it does not exists
 running grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
 
