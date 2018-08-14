@@ -3,37 +3,6 @@
 # Sanity check
 [ -f /etc/fedora-release ] || { error "This script if for Fedora"; exit 127; }
 
-# Repo download and unzip
-rm -rf /tmp/repo &>/dev/null
-mkdir -p /tmp/repo
-cd /tmp/repo
-curl -L https://github.com/devligue/dotfiles/archive/master.zip > repo.zip
-sudo dnf install unzip
-unzip repo.zip
-rm repo.zip
-cd dotfiles*
-mkdir -p ~/.dotfiles
-cp -a . ~/.dotfiles
-cd ~/.dotfiles
-rm -rf /tmp/repo
-
-source ./lib_sh/echos.sh
-bot "Hi! I'm going to setup this machine. Here I go..."
-
-bot "Configuring git. I'm gonna need your help..."
-grep 'user = GITHUBUSER' ./homedir/.gitconfig > /dev/null 2>&1
-if [[ $? = 0 ]]; then
-    read -r -p "What is your github.com username? " githubuser
-    read -r -p "What is your first name? " firstname
-    read -r -p "What is your last name? " lastname
-    read -r -p "What is your email? " email
-    fullname="$firstname $lastname"
-    bot "Greatings $fullname, "
-    sed -i "s/GITHUBFULLNAME/$firstname $lastname/" ./homedir/.gitconfig > /dev/null 2>&1
-    sed -i 's/GITHUBEMAIL/'$email'/' ./homedir/.gitconfig
-    sed -i 's/GITHUBUSER/'$githubuser'/' ./homedir/.gitconfig
-fi
-
 bot "Updating packages..."
 running sudo dnf -y update
 
@@ -43,43 +12,21 @@ running sudo dnf install python3-pip
 running pip install --user neovim
 running pip3 install --user pipenv neovim flake8 black
 
-bot "Creating symlinks for project dotfiles..."
-pushd homedir > /dev/null 2>&1
-now=$(date +"%Y.%m.%d.%H.%M.%S")
-
-for file in .*; do
-  if [[ $file == "." || $file == ".." ]]; then
-    continue
-  fi
-  # if the file exists:
-  if [[ -e ~/$file ]]; then
-      warn "$file already exists"
-      mkdir -p ~/.dotfiles_backup/$now
-      running mv ~/$file ~/.dotfiles_backup/$now/$file
-      inform "backup saved as ~/.dotfiles_backup/$now/$file"
-  fi
-  # symlink might still exist
-  running unlink ~/$file > /dev/null 2>&1
-  # create the link
-  running ln -s ~/.dotfiles/homedir/$file ~/$file
-  ok "${file} linked"
-done
-
-popd > /dev/null 2>&1
-
 bot "Configuring bash..."
-# fzf
+# Install fzf
 running git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 running ~/.fzf/install
-# ag
+# Install ag
 running sudo dnf install the_silver_searcher
-# sourcing
+# Add "source ~/.profile" to .bashrc if it does not exists
 running grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
 
 bot "Setting up neovim..."
+# Install NeoVIM
 running sudo dnf -y install neovim
+# Make sure exuberant ctags are installed
 running sudo dnf install ctags
+# Install Vundle.vim plugin manager
 running git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim_runtime/bundle/Vundle.vim
+# Install nvim plugins
 running nvim +PluginInstall +qall
-
-bot "Everything done! Please reboot, so that everything works correctly"
