@@ -30,3 +30,10 @@ running sudo dnf install ctags
 running git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim_runtime/bundle/Vundle.vim
 # Install nvim plugins
 running nvim +PluginInstall +qall
+# Build YouCompleteMe
+running sudo dnf install automake gcc gcc-c++ kernel-devel cmake
+running sudo dnf install python-devel python3-devel
+cd ~/.vim/bundle/YouCompleteMe
+# for go add: --go-completer
+# for js add: --js-completer
+running ./install.py --clang-completer
