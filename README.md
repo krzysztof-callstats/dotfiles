@@ -1,10 +1,13 @@
 # Auto setup development environment
 
 ## Installation
-
 ```
 bash <(curl -L https://raw.githubusercontent.com/devligue/dotfiles/master/install.sh)
 ```
+
+## Supported Platforms
+* Fedora
+* Ubuntu
 
 ## TODO
 - [ ] Go installation + YCM setup
