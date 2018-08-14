@@ -4,8 +4,10 @@
 syntax enable                               " syntax highlight
 
 " Colors and themes
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
+let $VTE_VERSION="100"
 set t_Co=256                                " set 256 colors
-set termguicolors
+" set termguicolors
 try
     colorscheme onedark
 catch
