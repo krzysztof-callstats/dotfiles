@@ -63,7 +63,7 @@ function cf () {
   else
     echo "$(readlink -f $@)" > $CD_FAV_FILE;
     echo "Your favorite directory is now:" $(readlink -f $@)
-    echo "To cd to your favorite directory, use: `cf`"
-    echo "To change saved favorite directory, use: `cf /your/new/favorite/dir`"
+    echo "To cd to your favorite directory, use: cf"
+    echo "To change saved favorite directory, use: cf /your/new/favorite/dir"
   fi
 }
