@@ -59,7 +59,7 @@ augroup vimrc_autocmds
 augroup END
 
 " code folding
-let g:pymode_folding=1
+let g:pymode_folding=0
 
 " pep8 indents
 let g:pymode_indent=1
