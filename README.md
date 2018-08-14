@@ -2,16 +2,8 @@
 
 ## Installation
 
-### Ubuntu
-
 ```
-bash <(curl -L https://raw.githubusercontent.com/devligue/dotfiles/master/install_ubuntu.sh)
-```
-
-### Fedora
-
-```
-bash <(curl -L https://raw.githubusercontent.com/devligue/dotfiles/master/install_fedora.sh)
+bash <(curl -L https://raw.githubusercontent.com/devligue/dotfiles/master/install.sh)
 ```
 
 ## Acknowledgments
