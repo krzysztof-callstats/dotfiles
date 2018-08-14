@@ -32,16 +32,16 @@ source ./lib_sh/echos.sh
 bot "Hi! I'm going to setup this machine. Here I go..."
 
 # Configure git
-bash scripts/setup_git.sh
+source ./scripts/setup_git.sh
 
 # Create symlinks
-bash scripts/symlink_dotfiles.sh
+source ./scripts/symlink_dotfiles.sh
 
 # Run script for specific platform
 if [[ -f /etc/fedora-release ]]; then
-  bash install_fedora.sh
+  source ./install_fedora.sh
 elif [[ -f /etc/lsb-release ]]; then
-  bash install_ubuntu.sh
+  source ./install_ubuntu.sh
 else
   error "This setup script does not support your platform."
   exit 127;
