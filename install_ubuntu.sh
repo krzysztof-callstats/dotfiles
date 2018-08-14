@@ -72,7 +72,10 @@ done
 popd > /dev/null 2>&1
 
 bot "Configuring bash..."
-# mkdir -p ~/bin
+# fzf
+running git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+running ~/.fzf/install
+# sourcing
 running grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
 
 bot "Setting up neovim..."
