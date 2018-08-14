@@ -8,10 +8,12 @@ rm -rf /tmp/repo &>/dev/null
 mkdir -p /tmp/repo
 cd /tmp/repo
 curl -L https://github.com/devligue/dotfiles/archive/master.zip > repo.zip
-sudo dnf -y install unzip
+sudo dnf install unzip
 unzip repo.zip
 rm repo.zip
-mv dotfiles* ~/.dotfiles
+cd dotfiles*
+mkdir -p ~/.dotfiles
+cp -a . ~/.dotfiles
 cd ~/.dotfiles
 rm -rf /tmp/repo
 
@@ -68,10 +70,11 @@ popd > /dev/null 2>&1
 bot "Configuring bash..."
 # mkdir -p ~/bin
 running grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
-running source ~/.bashrc
 
 bot "Setting up neovim..."
 running sudo dnf -y install neovim
 running sudo dnf install ctags
 running git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim_runtime/bundle/Vundle.vim
 running nvim +PluginInstall +qall
+
+bot "Everything done! Please reboot, so that everything works correctly"
