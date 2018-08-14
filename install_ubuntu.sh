@@ -33,20 +33,17 @@ if [[ $? = 0 ]]; then
 fi
 
 bot "Configuring system repository..."
-sudo apt-get install software-properties-common
-sudo apt-add-repository ppa:neovim-ppa/stable
+running sudo apt-get install software-properties-common
+running sudo apt-add-repository ppa:neovim-ppa/stable
 
 bot "Updating packages..."
-sudo apt-get update
+running sudo apt-get update
 
 bot "Installing python and other necessary tools"
-sudo apt install python-pip
-sudo apt install python3-pip
-pip install --user neovim
-pip3 install --user pipenv neovim flake8 black
-
-bot "Installing neovim..."
-sudo apt-get install neovim
+running sudo apt install python-pip
+running sudo apt install python3-pip
+running pip install --user neovim
+running pip3 install --user pipenv neovim flake8 black
 
 bot "Creating symlinks for project dotfiles..."
 pushd homedir > /dev/null 2>&1
@@ -58,26 +55,27 @@ for file in .*; do
   fi
   # if the file exists:
   if [[ -e ~/$file ]]; then
+      warn "$file already exists"
       mkdir -p ~/.dotfiles_backup/$now
-      mv ~/$file ~/.dotfiles_backup/$now/$file
-      echo "backup saved as ~/.dotfiles_backup/$now/$file"
+      running mv ~/$file ~/.dotfiles_backup/$now/$file
+      inform "backup saved as ~/.dotfiles_backup/$now/$file"
   fi
   # symlink might still exist
-  unlink ~/$file > /dev/null 2>&1
+  running unlink ~/$file > /dev/null 2>&1
   # create the link
-  ln -s ~/.dotfiles/homedir/$file ~/$file
-  echo -en linking ${file}; ok
+  running ln -s ~/.dotfiles/homedir/$file ~/$file
+  ok "${file} linked"
 done
 
 popd > /dev/null 2>&1
 
-
-# Configure BASH
+bot "Configuring bash..."
 # mkdir -p ~/bin
-# grep 'source ~/.profile' ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
+running grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
+running source ~/.bashrc
 
 bot "Setting up neovim..."
-sudo apt install exuberant-ctags
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim_runtime/bundle/Vundle.vim
-nvim +PluginInstall +qall
-#sudo reboot
+running sudo apt-get install neovim
+running sudo apt install exuberant-ctags
+running git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim_runtime/bundle/Vundle.vim
+running nvim +PluginInstall +qall
