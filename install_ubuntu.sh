@@ -85,5 +85,12 @@ running sudo apt-get install neovim
 running sudo apt install exuberant-ctags
 running git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim_runtime/bundle/Vundle.vim
 running nvim +PluginInstall +qall
+# build YouCompleteMe
+running sudo apt-get install build-essential cmake -y
+running sudo apt-get install python-dev python3-dev
+cd ~/.vim/bundle/YouCompleteMe
+# for go add: --go-completer
+# for js add: --js-completer
+running ./install.py --clang-completer
 
 bot "Everything done! Please reboot, so that everything works correctly"
