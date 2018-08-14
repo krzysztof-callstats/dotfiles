@@ -75,6 +75,8 @@ bot "Configuring bash..."
 # fzf
 running git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 running ~/.fzf/install
+# ag
+running sudo apt-get install silversearcher-ag
 # sourcing
 running grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
 
