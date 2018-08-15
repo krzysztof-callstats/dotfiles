@@ -9,5 +9,5 @@ source ~/.dotfiles/lib_sh/cd_extensions.sh
 eval "$(direnv hook bash)"
 
 # go
-# export GOROOT=/usr/local/go
-# export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export GOROOT=/usr/local/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
