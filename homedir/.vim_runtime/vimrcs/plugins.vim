@@ -17,6 +17,7 @@ call vundle#begin()
     Plugin 'jistr/vim-nerdtree-tabs'
     Plugin 'majutsushi/tagbar'                  " Class/module browser
     Plugin 'ctrlpvim/ctrlp.vim'                 " Fast transitions on project files
+    Plugin 'junegunn/fzf.vim'                   " Fuzzy Finder
 
     "-------------------=== Other ===-------------------------------
     Plugin 'bling/vim-airline'                  " Lean & mean status/tabline for vim
