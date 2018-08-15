@@ -6,6 +6,9 @@
 bot "Updating packages..."
 running sudo dnf -y update
 
+bot "Installing go..."
+running sudo dnf install golang -y
+
 bot "Installing python and other necessary tools"
 running sudo dnf install python-pip
 running sudo dnf install python3-pip
