@@ -81,8 +81,8 @@ let g:nerdtree_tabs_open_on_console_startup=1
 "" SnipMate settings
 "=====================================================
 let g:snippets_dir='~/.vim/vim-snippets/snippets'
-:imap <C-tab> <Plug>snipMateNextOrTrigger
-:smap <C-tab> <Plug>snipMateNextOrTrigger
+imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
 
 "=====================================================
 "" Syntastic settings
