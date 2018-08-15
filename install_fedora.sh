@@ -6,8 +6,9 @@
 bot "Updating packages..."
 running sudo dnf -y update
 
-bot "Installing go..."
+bot "Installing go and other packages..."
 running sudo dnf install golang -y
+go get -u github.com/mvdan/sh/cmd/shfmt
 
 bot "Installing python and other necessary tools"
 running sudo dnf install python-pip
@@ -22,7 +23,8 @@ running ~/.fzf/install
 # Install ag
 running sudo dnf install the_silver_searcher -y
 # Install direnv
-running sudo dnf install direnv -y
+# git clone git@github.com:direnv/direnv.git
+# running sudo dnf install direnv -y
 # Add "source ~/.profile" to .bashrc if it does not exists
 running grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
 
