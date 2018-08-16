@@ -76,6 +76,7 @@ let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']     " Ignore files in NE
 autocmd VimEnter * if !argc() | NERDTree | endif  " Load NERDTree only if vim is run without arguments
 nmap <F3> :NERDTreeToggle<CR>
 let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_smart_startup_focus=2         " Focus file always
 
 "=====================================================
 "" SnipMate settings
