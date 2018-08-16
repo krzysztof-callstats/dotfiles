@@ -48,6 +48,10 @@ set secure                                  " prohibit .vimrc files to execute s
 
 set cmdheight=2
 
+" Folding
+set foldmethod=indent
+set foldnestmax=2
+
 " A buffer becomes hidden when it is abandoned
 set hid
 
