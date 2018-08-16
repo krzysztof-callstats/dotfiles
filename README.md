@@ -5,6 +5,11 @@
 bash <(curl -L https://raw.githubusercontent.com/devligue/dotfiles/master/install.sh)
 ```
 
+## Sync local .dotfiles with this repo
+```
+bach <(curl -l https://raw.githubusercontent.com/Devligue/dotfiles/master/scripts/sync_dotfiles.sh)
+```
+
 ## Supported Platforms
 * Fedora
 * Ubuntu
