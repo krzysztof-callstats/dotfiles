@@ -10,6 +10,10 @@ running sudo apt-add-repository ppa:neovim-ppa/stable
 bot "Updating packages..."
 running sudo apt-get update
 
+bot "Installing go and other packages..."
+running sudo dnf install golang -y
+# go get -u mvdan.cc/sh/cmd/shfmt
+
 bot "Installing python and other necessary tools"
 running sudo apt install python-pip
 running sudo apt install python3-pip
@@ -22,6 +26,8 @@ running git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 running ~/.fzf/install
 # Install ag
 running sudo apt-get install silversearcher-ag
+# Install direnv
+running sudo apt install direnv -y
 # Add "source ~/.profile" to .bashrc if it does not exists
 running grep "source ~/.profile" ~/.bashrc || echo "source ~/.profile" >> ~/.bashrc
 
@@ -38,6 +44,5 @@ running nvim +PluginInstall +qall
 running sudo apt-get install build-essential cmake -y
 running sudo apt-get install python-dev python3-dev
 cd ~/.vim/bundle/YouCompleteMe
-# for go add: --go-completer
 # for js add: --js-completer
-running ./install.py --clang-completer
+running ./install.py --clang-completer --go-completer
