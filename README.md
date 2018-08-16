@@ -10,7 +10,7 @@ bash <(curl -L https://raw.githubusercontent.com/devligue/dotfiles/master/instal
 * Ubuntu
 
 ## TODO
-- [ ] Go installation + YCM setup
+- [x] Go installation + YCM setup
 - [ ] JS (node.js, npm) installation + YCM setup
 - [ ] Python virtualenvs setup
 
