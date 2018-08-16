@@ -58,8 +58,8 @@ set hid
 " Highlight search results
 set hlsearch
 
-" <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+" Make double-<Esc> clear search highlights
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 " Makes search act like search in modern browsers
 set incsearch
