@@ -7,7 +7,7 @@ bash <(curl -L https://raw.githubusercontent.com/devligue/dotfiles/master/instal
 
 ## Sync local .dotfiles with this repo
 ```
-bach <(curl -l https://raw.githubusercontent.com/Devligue/dotfiles/master/scripts/sync_dotfiles.sh)
+bash <(curl -L https://raw.githubusercontent.com/Devligue/dotfiles/master/scripts/sync_dotfiles.sh)
 ```
 
 ## Supported Platforms
