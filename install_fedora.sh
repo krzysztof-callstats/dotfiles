@@ -8,7 +8,8 @@ running sudo dnf -y update
 
 bot "Installing go and other packages..."
 running sudo dnf install golang -y
-# go get -u mvdan.cc/sh/cmd/shfmt
+running go get -u github.com/jstemmer/gotags
+running sudo dnf install gotags -y
 
 bot "Installing python and other necessary tools"
 running sudo dnf install python-pip
