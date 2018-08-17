@@ -68,8 +68,8 @@ let g:airline_powerline_fonts=1
 "=====================================================
 let g:tagbar_autofocus=0
 " let g:tagbar_width=42
-autocmd BufEnter *.go :call tagbar#autoopen(0)
-autocmd BufWinLeave *.go :TagbarClose
+autocmd BufEnter *.py,*.go :call tagbar#autoopen(0)
+autocmd BufWinLeave *.py,*.go :TagbarClose
 
 let g:tagbar_type_go = {
 	\ 'ctagstype' : 'go',
