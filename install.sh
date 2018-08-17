@@ -9,7 +9,7 @@ if [[ ! -z $DNF_CMD ]]; then
   sudo dnf install unzip
 elif [[ ! -z $YUM_CMD ]]; then
   sudo yum install unzip
-elif [[ ! -z $APT_GET_CMD ]]; then
+elif [[ ! -z $APT_CMD ]]; then
   sudo apt install unzip
 else
   echo "error can't install package unzip"
