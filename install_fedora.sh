@@ -10,6 +10,7 @@ bot "Installing go and other packages..."
 running sudo dnf install golang -y
 running go get -u github.com/jstemmer/gotags
 running sudo dnf install gotags -y
+running sudo dnf install golang-googlecode-tools-goimports -y
 
 bot "Installing python and other necessary tools"
 running sudo dnf install python-pip
