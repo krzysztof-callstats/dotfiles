@@ -51,6 +51,7 @@ set cmdheight=2
 " Folding
 set foldmethod=indent
 set foldnestmax=2
+set foldlevel=1
 
 " A buffer becomes hidden when it is abandoned
 set hid
