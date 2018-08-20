@@ -30,6 +30,7 @@ call vundle#begin()
     Plugin 'flazz/vim-colorschemes'             " Colorschemes
     Plugin 'airblade/vim-gitgutter.git'         " Git support
     Plugin 'rafi/awesome-vim-colorschemes.git'  " Awesome Vim color schemes
+    Plugin 'ryanoasis/vim-devicons'             " Icons
 
     "-------------------=== Snippets support ===--------------------
     Plugin 'garbas/vim-snipmate'                " Snippets manager
