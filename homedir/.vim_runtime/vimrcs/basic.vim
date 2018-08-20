@@ -71,6 +71,10 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Show whitespace characters
+:set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:.
+:set list
+
 " Add a bit extra margin to the left
 set foldcolumn=1
 
