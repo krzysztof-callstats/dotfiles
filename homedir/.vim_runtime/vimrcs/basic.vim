@@ -25,7 +25,7 @@ if (empty($TMUX))
 endif
 
 try
-    g:onedark_terminal_italics=1
+    let g:onedark_terminal_italics=1
     colorscheme onedark
 catch
     colorscheme wombat256mod
