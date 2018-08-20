@@ -58,6 +58,7 @@
   
   # fzf
   faddm = add $(git ls-files -m | fzf)
+  faddu = add $(git ls-files --exclude-standard --others | fzf)
   fadd = add $(git ls-files | fzf)
 
   # least used
