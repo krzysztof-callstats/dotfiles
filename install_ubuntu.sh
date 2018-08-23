@@ -18,7 +18,8 @@ bot "Installing python and other necessary tools"
 running sudo apt install python-pip
 running sudo apt install python3-pip
 running pip install --user neovim
-running pip3 install --user pipenv neovim flake8 black pylint
+running pip3 install --user neovim flake8 black pylint
+running sudo pip3 install pipenv
 
 bot "Configuring bash..."
 # Install fzf
