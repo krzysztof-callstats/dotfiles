@@ -69,4 +69,4 @@ let g:pymode_run=1
 let g:pymode_run_bind='<F5>'
 
 " syntastic
-let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python3']
+let g:syntastic_python_checkers=['pylint']
