@@ -56,11 +56,6 @@
   cam = commit -a -m
   upm = !git fetch upstream && git merge upstream/master
   
-  # fzf
-  faddm = !sh -c "git add $(git ls-files -m | fzf -m)"
-  faddu = !sh -c "git add $(git ls-files --exclude-standard --others | fzf -m)"
-  fadd = !sh -c "git add $(git ls-files | fzf -m)"
-
   # least used
   br = branch -a
   s = status -s -u
