@@ -64,6 +64,7 @@ set exrc                                    " enable usage of additional .vimrc 
 set secure                                  " prohibit .vimrc files to execute shell, create files, etc...
 
 set cmdheight=2
+set splitbelow                              " open horizontal split window below
 
 " Folding
 set foldmethod=indent
