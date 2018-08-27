@@ -163,3 +163,8 @@ nmap <leader>d :YcmCompleter GoToDefinition<CR>
 "" Black settings
 "=====================================================
 autocmd BufWritePre *.py execute ':Black'
+
+"=====================================================
+"" vim-go settings
+"=====================================================
+let g:go_term_mode = "sp"
