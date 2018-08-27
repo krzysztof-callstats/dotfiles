@@ -23,3 +23,6 @@ for file in .*; do
 done
 
 popd > /dev/null 2>&1
+
+# Reload fonts cache
+running fc-cache -f -v
