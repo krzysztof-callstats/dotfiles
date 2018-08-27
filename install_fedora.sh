@@ -42,6 +42,5 @@ running nvim +PluginInstall +qall
 running sudo dnf install automake gcc gcc-c++ kernel-devel cmake -y
 running sudo dnf install python-devel python3-devel -y
 cd ~/.vim/bundle/YouCompleteMe
-# for go add: --go-completer
 # for js add: --js-completer
-running ./install.py --clang-completer
+running ./install.py --clang-completer --go-completer
