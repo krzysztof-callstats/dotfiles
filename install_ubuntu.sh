@@ -21,6 +21,17 @@ running pip install --user neovim
 running pip3 install --user neovim flake8 black pylint
 running sudo pip3 install pipenv
 
+bot "Setting up Node.js development environment..."
+" Install C++ compiler
+running sudo apt-get install build-essential -y
+" Install OpenSSL
+running sudo apt-get install libssl-dev -y
+" Install Node Version Manager
+running curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+running . ~/.bashrc
+" Install latest Node
+running nvm install node
+
 bot "Configuring bash..."
 # Install fzf
 running git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
