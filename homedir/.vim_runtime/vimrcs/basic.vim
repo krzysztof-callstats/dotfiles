@@ -89,6 +89,9 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Use <F2> before pasting in insert mode to preserve indents
+set pastetoggle=<F2>
+
 " Show whitespace characters
 :set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:.
 :set list
